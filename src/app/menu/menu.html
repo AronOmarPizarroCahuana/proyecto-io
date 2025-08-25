@@ -1,35 +1,226 @@
-<nav class="bg-gray-900 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-center space-x-8 py-4 text-white text-lg font-medium">
-        <a
-          routerLink="/esquina-noroeste"
-          routerLinkActive="border-b-2 border-blue-400"
-          class="px-4 py-2 rounded hover:bg-gray-800 transition-colors duration-300"
-        >
-          Esquina NorOeste
-        </a>
-        <a
-          routerLink="/costo-minimo"
-          routerLinkActive="border-b-2 border-green-400"
-          class="px-4 py-2 rounded hover:bg-gray-800 transition-colors duration-300"
-        >
-          Costo Mínimo
-        </a>
-        <a
-          routerLink="/aproximacion-vogel"
-          routerLinkActive="border-b-2 border-purple-400"
-          class="px-4 py-2 rounded hover:bg-gray-800 transition-colors duration-300"
-        >
-          Aproximación de Vogel
-        </a>
-        <a
-          routerLink="/hungaro"
-          routerLinkActive="border-b-2 border-red-400"
-          class="px-4 py-2 rounded hover:bg-gray-800 transition-colors duration-300"
-        >
-          Método Húngaro
-        </a>
+<!-- menu.component.html -->
+<!-- Header / Hero -->
+<header class="relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <svg class="absolute -top-24 -right-24 w-[520px] h-[520px] opacity-30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#6C63FF"/>
+          <stop offset="100%" stop-color="#00D1B2"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#g1)" d="M43.1,-62.1C56.1,-55.7,66.8,-46.8,73.5,-35.3C80.2,-23.7,82.8,-9.5,81.1,4.7C79.3,18.8,73.2,33,63.7,44.5C54.2,56,41.2,64.7,27.5,70.4C13.7,76.1,-0.7,78.7,-14.9,76.3C-29.2,73.8,-43.2,66.3,-54.2,56C-65.2,45.8,-73.2,32.9,-77.3,18.6C-81.4,4.3,-81.6,-11.3,-76.6,-24.6C-71.6,-37.9,-61.5,-48.8,-49.7,-56.3C-38,-63.8,-25,-68,-12.3,-67.8C0.3,-67.6,12.5,-62,43.1,-62.1Z" transform="translate(100 100)"/>
+    </svg>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 pt-12 pb-10 lg:pt-16 lg:pb-14">
+    <div class="flex flex-col lg:flex-row items-center gap-10">
+      <div class="flex-1">
+        <div class="inline-flex items-center gap-2 chip text-sm text-white/90 px-3 py-1 rounded-full">
+          <span>Optimización aplicada</span>
+          <span class="h-1.5 w-1.5 rounded-full bg-[var(--brand-2)]"></span>
+          <span>Transporte y Asignación</span>
+        </div>
+        <h1 class="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+          Soluciones profesionales de Investigación de Operaciones
+        </h1>
+        <p class="mt-4 text-white/80 max-w-2xl">
+          Resuelve problemas reales de distribución y asignación con metodologías confiables: Esquina Noroeste, Costo Mínimo, Aproximación de Vogel y Húngaro. Visualiza cada iteración y entiende el impacto económico de tus decisiones.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#app" class="btn inline-flex items-center gap-2 bg-[var(--brand)] hover:bg-indigo-500 text-white px-5 py-3 rounded-xl font-semibold">
+            Empezar ahora
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#metodos" class="btn inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white px-5 py-3 rounded-xl">
+            Ver métodos
+          </a>
+        </div>
+        <div class="mt-6 flex items-center gap-4 text-white/70 text-sm">
+          <div class="flex -space-x-2">
+            <span class="h-8 w-8 rounded-full bg-[var(--brand)]/30 flex items-center justify-center ring-2 ring-white/10">A</span>
+            <span class="h-8 w-8 rounded-full bg-[var(--brand-2)]/30 flex items-center justify-center ring-2 ring-white/10">J</span>
+          </div>
+          <span>Creado por: <strong>Aron Omar Pizarro Cahuana</strong> y <strong>Jhoel Esteban Cardenas Quispe</strong></span>
+        </div>
+      </div>
+      <div class="flex-1 w-full">
+        <div class="glass rounded-2xl p-5 lg:p-6">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl p-4 bg-gradient-to-br from-indigo-600/30 to-indigo-400/10 border border-white/10">
+              <div class="text-sm text-white/80">Tiempo de respuesta</div>
+              <div class="text-2xl font-bold mt-1">Rápido</div>
+              <div class="text-xs text-white/60 mt-2">Optimizado para iteraciones claras</div>
+            </div>
+            <div class="rounded-xl p-4 bg-gradient-to-br from-teal-500/30 to-teal-300/10 border border-white/10">
+              <div class="text-sm text-white/80">Ahorro</div>
+              <div class="text-2xl font-bold mt-1">Hasta 18%</div>
+              <div class="text-xs text-white/60 mt-2">vs. planificación manual</div>
+            </div>
+            <div class="rounded-xl p-4 col-span-2 bg-gradient-to-br from-yellow-400/20 to-pink-400/10 border border-white/10">
+              <div class="text-sm text-white/80">Resultados listos para el cliente</div>
+              <div class="text-lg font-semibold mt-1">Reporte con interpretación económica</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-  
+  </div>
+</header>
+
+<!-- Sección métodos -->
+<section id="metodos" class="max-w-7xl mx-auto px-6 py-12">
+  <div class="glass rounded-2xl p-6 lg:p-8">
+    <div class="flex items-center justify-between gap-4 flex-wrap">
+      <h2 class="text-2xl lg:text-3xl font-bold">Métodos disponibles</h2>
+      <div class="flex gap-2">
+        <span class="badge chip text-white px-3 py-1 rounded-full">Transporte</span>
+        <span class="badge chip text-white px-3 py-1 rounded-full">Asignación</span>
+      </div>
+    </div>
+    <div class="mt-6 grid md:grid-cols-3 gap-4">
+      <div class="rounded-xl p-5 bg-white/5 border border-white/10">
+        <h3 class="font-semibold">Esquina Noroeste</h3>
+        <p class="text-white/70 text-sm mt-2">Solución inicial rápida basada en la esquina superior izquierda del tableau.</p>
+      </div>
+      <div class="rounded-xl p-5 bg-white/5 border border-white/10">
+        <h3 class="font-semibold">Costo Mínimo</h3>
+        <p class="text-white/70 text-sm mt-2">Selecciona las celdas con menor costo para aproximar una solución eficiente.</p>
+      </div>
+      <div class="rounded-xl p-5 bg-white/5 border border-white/10">
+        <h3 class="font-semibold">Aproximación de Vogel</h3>
+        <p class="text-white/70 text-sm mt-2">Usa penalizaciones por fila/columna para acelerar la convergencia.</p>
+      </div>
+      <div class="rounded-xl p-5 bg-white/5 border border-white/10 md:col-span-3">
+        <h3 class="font-semibold">Método Húngaro (Asignación)</h3>
+        <p class="text-white/70 text-sm mt-2">Encuentra la asignación óptima minimizando el costo total con reducciones y cubrimientos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Aplicación interactiva -->
+<section id="app" class="max-w-7xl mx-auto px-6 pb-16">
+  <div class="grid lg:grid-cols-3 gap-6">
+    <!-- Panel de entrada -->
+    <div class="lg:col-span-1 glass rounded-2xl p-6">
+      <h3 class="text-xl font-bold">Configurar problema</h3>
+      <p class="text-white/70 text-sm mt-1">Ingresa costos, oferta y demanda. Puedes usar el ejemplo.</p>
+
+      <div class="mt-4">
+        <label class="block text-sm text-white/80 mb-1">Tipo de problema</label>
+        <div class="grid grid-cols-2 gap-2">
+          <button data-type="transporte" class="type-btn btn px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 font-medium tab-active">Transporte</button>
+          <button data-type="asignacion" class="type-btn btn px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 font-medium">Asignación</button>
+        </div>
+      </div>
+
+      <div class="mt-4 grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm text-white/80 mb-1">Origenes</label>
+          <input #rowsInput id="rows" type="number" min="1" max="6" value="3" class="w-full rounded-xl bg-white/10 border border-white/10 px-3 py-2 focus:outline-none focus:ring-2 ring-brand" />
+        </div>
+        <div>
+          <label class="block text-sm text-white/80 mb-1">Destinos</label>
+          <input #colsInput id="cols" type="number" min="1" max="6" value="3" class="w-full rounded-xl bg-white/10 border border-white/10 px-3 py-2 focus:outline-none focus:ring-2 ring-brand" />
+        </div>
+      </div>
+
+      <div class="mt-4 flex items-center gap-2">
+        <button id="build" class="btn bg-[var(--brand)] hover:bg-indigo-500 text-white px-4 py-2 rounded-xl font-semibold">Generar tabla</button>
+        <button id="fillExample" class="btn bg-white/10 hover:bg-white/15 text-white px-4 py-2 rounded-xl">Cargar ejemplo</button>
+        <button id="balance" class="btn bg-[var(--brand-2)]/90 hover:bg-[var(--brand-2)] text-ink px-4 py-2 rounded-xl font-semibold">Balancear</button>
+      </div>
+
+      <div class="mt-6">
+        <h4 class="font-semibold mb-2">Matriz de costos</h4>
+        <div #matrix id="matrix" class="overflow-auto">
+          <!-- Se rellena dinámicamente -->
+        </div>
+        <div class="mt-3 grid grid-cols-2 gap-3">
+          <div>
+            <h4 class="font-semibold mb-2">Oferta</h4>
+            <div #supply id="supply" class="grid-auto"></div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Demanda</h4>
+            <div #demand id="demand" class="grid-auto"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <label class="block text-sm text-white/80 mb-2">Método</label>
+        <div class="grid grid-cols-2 gap-2">
+          <button data-method="nw" class="method-btn btn px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15">Esquina Noroeste</button>
+          <button data-method="lc" class="method-btn btn px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15">Costo Mínimo</button>
+          <button data-method="vogel" class="method-btn btn px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15">Aprox. de Vogel</button>
+          <button data-method="hungarian" class="method-btn btn px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15">Húngaro</button>
+        </div>
+      </div>
+
+      <div class="mt-5 flex gap-2">
+        <button id="solve" class="btn bg-[var(--accent)] hover:bg-yellow-400 text-ink font-bold px-5 py-2.5 rounded-xl">Resolver</button>
+        <button id="step" class="btn bg-white/10 hover:bg-white/15 text-white px-5 py-2.5 rounded-xl">Paso a paso</button>
+        <button id="reset" class="btn bg-white/10 hover:bg-white/15 text-white px-5 py-2.5 rounded-xl">Reiniciar</button>
+      </div>
+
+      <p class="text-xs text-white/60 mt-4">Nota: Para fines de demostración en navegador, los cálculos se realizan localmente.</p>
+    </div>
+
+    <!-- Panel de iteraciones -->
+    <div class="lg:col-span-2 glass rounded-2xl p-6">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <h3 class="text-xl font-bold">Iteraciones</h3>
+        <div class="flex items-center gap-2">
+          <span class="badge chip text-white px-3 py-1 rounded-full" id="methodLabel">—</span>
+          <button id="exportReport" class="btn bg-white/10 hover:bg-white/15 px-4 py-2 rounded-xl">Exportar reporte</button>
+        </div>
+      </div>
+
+      <div #iterations id="iterations" class="mt-4 space-y-4">
+        <div class="text-white/70">Genera la tabla y elige un método para ver las iteraciones.</div>
+      </div>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-4">
+        <div class="rounded-xl p-4 bg-white/5 border border-white/10">
+          <h4 class="font-semibold">Costo total:</h4>
+          <div #totalCostElement id="totalCost" class="text-3xl font-extrabold mt-1">—</div>
+          <p class="text-white/70 text-sm mt-1">Suma de las asignaciones por su costo unitario.</p>
+        </div>
+        <div class="rounded-xl p-4 bg-white/5 border border-white/10">
+          <h4 class="font-semibold">Interpretación económica</h4>
+          <p #econ id="econ" class="text-white/80 mt-1 text-sm">Aquí verás el análisis del impacto en costos y eficiencia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-10">
+    <div class="grid md:grid-cols-3 gap-6 items-start">
+      <div>
+        <div class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded-xl bg-[var(--brand)]/30 flex items-center justify-center">IO</div>
+          <span class="font-extrabold text-lg">Optimización Aplicada</span>
+        </div>
+        <p class="text-white/70 text-sm mt-3">Herramienta educativa y profesional para la toma de decisiones en logística y operaciones.</p>
+      </div>
+      <div>
+        <h5 class="font-semibold">Créditos</h5>
+        <p class="text-white/80 text-sm mt-2">
+          Desarrollado por <strong>Aron Omar Pizarro Cahuana</strong> y <strong>Jhoel Esteban Cardenas Quispe</strong>.
+        </p>
+      </div>
+      <div>
+        <h5 class="font-semibold">Acciones</h5>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a href="#app" class="btn bg-[var(--brand)] hover:bg-indigo-500 px-4 py-2 rounded-xl">Probar ahora</a>
+          <button id="print" class="btn bg-white/10 hover:bg-white/15 px-4 py-2 rounded-xl">Imprimir</button>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-white/50 text-xs mt-8">© <span id="year"></span> Optimización Aplicada. Todos los derechos reservados.</div>
+  </div>
+</footer>

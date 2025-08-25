@@ -1,0 +1,82 @@
+1. Esquina Noroeste (Northwest Corner Method)
+
+FUNCIÓN EsquinaNoroeste(matrizCostos, oferta, demanda):
+    m = número de filas, n = número de columnas
+    alloc = matriz m x n inicializada en 0
+    i = 0, j = 0
+    MIENTRAS i < m Y j < n:
+        x_ij = min(oferta[i], demanda[j])
+        alloc[i][j] = x_ij
+        oferta[i] = oferta[i] - x_ij
+        demanda[j] = demanda[j] - x_ij
+        SI oferta[i] == 0 Y demanda[j] == 0:
+            j += 1
+        SINO SI oferta[i] == 0:
+            i += 1
+        SINO:
+            j += 1
+    costoTotal = SUMA(i=0 a m-1, j=0 a n-1) (alloc[i][j] * matrizCostos[i][j])
+    RETORNAR alloc, costoTotal
+
+
+2. Costo Mínimo (Least Cost Method)
+
+FUNCIÓN CostoMinimo(matrizCostos, oferta, demanda):
+    m = número de filas, n = número de columnas
+    alloc = matriz m x n inicializada en 0
+    used = matriz m x n inicializada en falso
+    MIENTRAS SUMA(oferta) > 0 Y SUMA(demanda) > 0:
+        (i, j) = argmin(matrizCostos[i][j] donde oferta[i] > 0, demanda[j] > 0 y no used[i][j])
+        x_ij = min(oferta[i], demanda[j])
+        alloc[i][j] = x_ij
+        oferta[i] = oferta[i] - x_ij
+        demanda[j] = demanda[j] - x_ij
+        SI oferta[i] == 0: Marcar fila i como usada
+        SI demanda[j] == 0: Marcar columna j como usada
+    costoTotal = SUMA(i=0 a m-1, j=0 a n-1) (alloc[i][j] * matrizCostos[i][j])
+    RETORNAR alloc, costoTotal
+
+3. Aproximación de Vogel (Vogel's Approximation Method)
+
+FUNCIÓN AproximacionVogel(matrizCostos, oferta, demanda):
+    m = número de filas, n = número de columnas
+    alloc = matriz m x n inicializada en 0
+    activeRows = [true] * m, activeCols = [true] * n
+    MIENTRAS SUMA(oferta) > 0 Y SUMA(demanda) > 0:
+        PARA cada fila i activa:
+            p_i = segundoMinimo(matrizCostos[i][j] donde j activa) - minimo(matrizCostos[i][j] donde j activa)
+        PARA cada columna j activa:
+            p_j = segundoMinimo(matrizCostos[i][j] donde i activa) - minimo(matrizCostos[i][j] donde i activa)
+        (i_best, j_best) = argmax(p_i o p_j) y minimo(matrizCostos[i][j]) en esa fila/columna
+        x_ij = min(oferta[i_best], demanda[j_best])
+        alloc[i_best][j_best] = x_ij
+        oferta[i_best] -= x_ij
+        demanda[j_best] -= x_ij
+        SI oferta[i_best] == 0: Desactivar fila i_best
+        SI demanda[j_best] == 0: Desactivar columna j_best
+    costoTotal = SUMA(i=0 a m-1, j=0 a n-1) (alloc[i][j] * matrizCostos[i][j])
+    RETORNAR alloc, costoTotal
+
+4. Método Húngaro (Hungarian Method)
+
+FUNCIÓN MetodoHungaro(matrizCostos):
+    n = max(filas, columnas)
+    A = extender matriz a n x n con 0s si necesario
+    // Reducción por filas
+    PARA i = 0 a n-1:
+        minFila = MIN(j=0 a n-1) A[i][j]
+        A[i][j] = A[i][j] - minFila PARA todo j
+    // Reducción por columnas
+    PARA j = 0 a n-1:
+        minCol = MIN(i=0 a n-1) A[i][j]
+        A[i][j] = A[i][j] - minCol PARA todo i
+    // Selección de ceros
+    assigned = array de n con -1
+    usedCols = conjunto vacío
+    Ordenar filas por cantidad de ceros ascendente
+    PARA cada fila i en orden:
+        PARA cada j donde A[i][j] == 0 y j no en usedCols:
+            assigned[i] = j
+            AÑADIR j a usedCols
+    costoTotal = SUMA(i=0 a n-1) (matrizCostos[i][assigned[i]] donde assigned[i] >= 0)
+    RETORNAR assigned, costoTotal

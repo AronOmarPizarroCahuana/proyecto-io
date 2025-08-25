@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Menu } from './menu/menu.component';
+import { MenuComponent} from './menu/menu.component';
 
 @Component({
   selector: 'app-root',
   standalone: true, // Asegúrate de tener esto si estás usando Angular standalone
-  imports: [RouterOutlet, Menu],
+  imports: [RouterOutlet, MenuComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css'] // ← CORREGIDO (antes decía styleUrl)
 })

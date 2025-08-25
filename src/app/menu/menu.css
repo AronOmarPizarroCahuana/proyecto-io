@@ -1,0 +1,43 @@
+/* menu.component.css */
+:root{
+  --brand:#6C63FF;        /* Morado moderno */
+  --brand-2:#00D1B2;      /* Verde agua */
+  --ink:#0F172A;          /* Slate-900 */
+  --muted:#475569;        /* Slate-600 */
+  --bg:#0B1220;           /* Azul noche */
+  --card:#0F1A2F;         /* Azul profundo */
+  --soft:#182540;         /* Azul medio */
+  --accent:#FFD166;       /* Dorado sutil */
+}
+html,body{background: linear-gradient(180deg, var(--bg), #0a0f1d 60%, #091121); color:white; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+/* Tarjetas con vidrio suave */
+.glass{
+  background: linear-gradient(180deg, rgba(22,33,62,.75), rgba(16,25,44,.75));
+  border: 1px solid rgba(124,124,255,.18);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+  backdrop-filter: blur(8px);
+}
+.btn{
+  transition: all .2s ease;
+  transform-origin: center;
+}
+.btn:hover{ transform: translateY(-1px); }
+.chip{
+  background: rgba(108,99,255,.12);
+  border: 1px solid rgba(108,99,255,.35);
+}
+.ring-brand{ box-shadow: 0 0 0 4px rgba(108,99,255,.18); }
+.tab-active{
+  background: linear-gradient(180deg, rgba(108,99,255,.28), rgba(108,99,255,.16));
+  border-color: rgba(108,99,255,.55);
+  color: white;
+}
+.grid-auto{ display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+.table-cell{ min-width: 44px; text-align:center; }
+.badge{ font-size:.72rem; letter-spacing:.02em; }
+/* Tooltip */
+.tip:hover .tip-box{ opacity:1; transform: translateY(0); pointer-events: auto; }
+.tip-box{ opacity:0; transform: translateY(6px); transition: all .15s ease; pointer-events: none;}
+/* Simple fade */
+.fade-enter{ opacity:0; transform: translateY(6px); }
+.fade-enter-active{ opacity:1; transform: translateY(0); transition: all .18s ease; }
